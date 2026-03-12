@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI PDF Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>AI PDF Chatbot</h1>
+
+<div class="container">
+
+    <h2>Upload PDF</h2>
+
+    <input type="file" id="pdfFile">
+
+    <button onclick="uploadPdf()">Upload</button>
+
+    <p id="uploadStatus"></p>
+
+    <hr>
+
+    <h2>Ask Question</h2>
+
+    <input type="text" id="question" placeholder="Ask something...">
+
+    <button onclick="askQuestion()">Ask</button>
+
+    <p id="loadingStatus"></p>
+
+    <h3>Answer</h3>
+
+    <div id="answer"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

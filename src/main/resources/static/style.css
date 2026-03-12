@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 40px;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+button {
+    padding: 8px 16px;
+    margin-left: 10px;
+}
+
+#answer {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+#uploadStatus {
+    color: blue;
+}
+
+#loadingStatus {
+    color: green;
+}
