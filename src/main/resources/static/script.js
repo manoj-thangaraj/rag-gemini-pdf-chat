@@ -24,9 +24,7 @@ async function uploadPdf() {
 
         const data = await response.json();
 
-        const sessionId = data.sessionId;
-
-        localStorage.setItem("sessionId", sessionId);
+        localStorage.setItem("sessionId", data.sessionId);
 
         status.innerText = "PDF processed successfully ✅";
 
@@ -36,7 +34,6 @@ async function uploadPdf() {
 
     }
 }
-
 
 
 async function askQuestion(){
@@ -52,14 +49,19 @@ async function askQuestion(){
         return;
     }
 
-    loading.innerText = "Getting answer for you...";
+    if(!question){
+        alert("Please enter a question.");
+        return;
+    }
+
+    loading.innerText = "Getting answer...";
 
     answerBox.innerText = "";
 
     try {
 
         const response = await fetch(
-            `/chat?sessionId=${sessionId}&question=${question}`
+            `/chat?sessionId=${sessionId}&question=${encodeURIComponent(question)}`
         );
 
         const answer = await response.text();
@@ -71,7 +73,6 @@ async function askQuestion(){
     } catch (error){
 
         loading.innerText = "";
-
         answerBox.innerText = "Error getting answer.";
 
     }
